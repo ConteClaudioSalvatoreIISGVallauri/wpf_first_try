@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
 
 namespace firtsTry
 {
@@ -23,6 +24,15 @@ namespace firtsTry
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnInvia_Click(object sender, RoutedEventArgs e)
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("name");
+            table.Columns.Add("surname");
+            table.Rows.Add("claudio", "conte");
+            dgData.ItemsSource = table.DefaultView;
         }
     }
 }
